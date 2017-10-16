@@ -106,7 +106,7 @@ a = { response: {
 a[:response][:results].each { |article| article[:views] = 0 }
 
 def read_article(hash)
-  hash[:response][:results][Random.rand(0..hash[:response][:results].length)][:views] += 1
+  hash[:response][:results].sample[:views] += 1
 end
 
 def display_views(hash)
