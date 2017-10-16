@@ -108,3 +108,13 @@ a[:response][:results].each { |article| article[:views] = 0 }
 def read_article(hash)
   hash[:response][:results][Random.rand(0..hash[:response][:results].length)][:views] += 1
 end
+
+def display_views(hash)
+  hash[:response][:results].each do |article|
+    puts "Title: #{article[:webTitle]}"
+    puts "Views: #{article[:views]}"
+  end
+end
+
+read_article(a)
+display_views(a)
